@@ -40,7 +40,7 @@ r = requests.get('https://www.customnightvision.com/product/pvs-14-with-elbit-wh
 
 # Check status code for response recieved
 # success code - 200
-print(r)
+#print(r)
 
 #Check HTML in content for elements that start with 'span'
 soup = BeautifulSoup(r.content, 'html.parser')
@@ -69,21 +69,28 @@ for i in tubeList:
                 goodTubeList.append(i)
                 print(i)
 
+
+'''
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+       smtp_server.login("ndore444test@gmail.com", "--------")
+       smtp_server.sendmail("ndore444test@gmail.com", "ndore444test@gmail.com", "test")
+
 #Create SMTP session
-smtp = smtplib.SMTP('smtp.gmail.com', 587)
+sm = smtplib.SMTP('smtp.gmail.com', 465)
 #start TLS for security
-smtp.starttls()
+#sm.starttls()
 #login
-smtp.login('ndore444test@gmail.com)', '----')
+sm.login('ndore444test@gmail.com)', '----')
 #message
 message = goodTubeList[0]
 #sending message
-smtp.send_message('ndore444test@gmail.com', 'ndore444@gmail.com',message)
+sm.send_message('ndore444test@gmail.com', 'ndore444@gmail.com',message)
 #Closing session
-smtp.quit()
+sm.quit()
+'''
 
 
-print(goodTubeList)
+#print(goodTubeList)
 print("done")
 
 
