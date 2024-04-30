@@ -1,2 +1,2 @@
 # Python-Scraper
-Python web scraper to check tube specs 
+Python web scraper to check NVG tube specs 
